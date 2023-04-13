@@ -9,6 +9,20 @@ body {
 .custom-margin-top {
   margin-top: 7%; /* Or any other value you want */
 }
+/* css for trade entries */
+.trade-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trade-item > div {
+  float: right;
+  width:15% ;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 
 
 

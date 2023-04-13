@@ -5,23 +5,51 @@
 {% block content %} 
 
 <div class="container custom-margin-top">
+<ul class="list-group">
+    <li class="list-group-item">
+    <div class="trade-item">
+      <div class="trade-time">time</div>
+      <div class="trade-direction">direction</div>
+      <div class="trade-entry">entry</div>
+      <div class="trade-take-profit">take_profit</div>
+      <div class="trade-stop-loss">stop_loss</div>
+      <div class="trade-notes">notes </div>
 
+    </div>
+    </li>
+</ul>
+<ul class="list-group">
+  {% for trade in trades %}
+  <li class="list-group-item">
+    <div class="trade-item">
+      <div class="trade-time">{{ trade.time|default:'-' }}</div>
+      <div class="trade-direction">{{ trade.direction|default:'-' }}</div>
+      <div class="trade-entry">{{ trade.entry|default:'-' }}</div>
+      <div class="trade-take-profit">{{ trade.take_profit|default:'-' }}</div>
+      <div class="trade-stop-loss">{{ trade.stop_loss|default:'-' }}</div>
+      <div class="trade-notes">{{ trade.notes|default:'-' }}</div>
 
-<thead>
-    <tr>
-      <th>Time</th>
-      <th>Direction</th>
-      <th>Entry</th>
-      <th>Take Profit</th>
-      <th>Stop Loss</th>
-      <th>Notes</th>
-      <th></th>
-    </tr>
-  </thead>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
 
+        <span class="current-page">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
 
-
-
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+  </div>
 
 </div>
 
