@@ -4,14 +4,16 @@ from .models import Trade
 from .forms import TradeForm
 # Create your views here.
 from django.core.paginator import Paginator
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def index(request):
     trades = Trade.objects.order_by('entry_time')
-    paginator = Paginator(trades,per_page=10)
+    paginator = Paginator(trades, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    print(page_obj.has_next)
-    context = { 'trades' : trades,
+    print(paginator.page(8).object_list)
+    context = { 'trades' : page_obj,
                'page_obj': page_obj}
 
 
