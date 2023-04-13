@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+
+
+{%  block title %} 
+<title>Journal</title>
+{% endblock title %} 
+
+
+
 {% block content %}
 
 {% if messages %}
@@ -47,39 +55,6 @@
 <form method="post"  enctype="multipart/form-data">
   {% csrf_token %}
 
-  <!-- <label for="direction">Direction:</label>
-  <label>
-    <input type="radio" name="length" value="long" checked> Long
-  </label>
-  <label>
-    <input type="radio" name="length" value="short"> Short
-  </label>
-
-  <br>
-  <label for="entry">Entry:</label>
-  <input type="number" id="entry" name="entry" required>
-  <br>
-  <label for="take_profit">Take Profit:</label>
-  <input type="number" id="take_profit" name="take_profit">
-  <br>
-  <label for="stop_loss">Stop Loss:</label>
-  <input type="number" id="stop_loss" name="stop_loss">
-  <br>
-  <label for="notes">Notes:</label>
-  <textarea id="notes" name="notes"></textarea>
-  <br>
-  <br>
-  <label for="entry_time">Entry Time:</label>
-  {{ form.entry_time }}
-  <br>
-  <label for="exit_time">Exit Time:</label>
-  {{ form.exit_time }}
-  <br>
-  <label for="image">Image:</label>
-  <input type="file" id="image" name="image">
-
-  <br>
-  <input type="submit" value="Submit"> -->
 
   {{ form.direction }}
   <button type="submit">Submit</button>

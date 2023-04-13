@@ -3,6 +3,11 @@ from django.contrib import messages
 from .models import Trade
 from .forms import TradeForm
 # Create your views here.
+# Dashboard imports
+from django.http import JsonResponse
+# from .models import Order
+from django.core import serializers
+
 
 def index(request):
     trades = Trade.objects.order_by('entry_time')[:10]
@@ -25,5 +30,3 @@ def index(request):
 
 
 
-def dashboard(request, *args, **kwargs):
-    return render(request, 'dashboard.html')
