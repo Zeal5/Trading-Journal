@@ -26,7 +26,7 @@ def index(request):
         form = TradeForm()
 
     context['form'] = form
-    return render(request, 'index.html',context)
+    return render(request, 'dashboard.html',context)
 
 
 
