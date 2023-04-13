@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<h1>My Trades</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Direction</th>
+      <th>Entry</th>
+      <th>Take Profit</th>
+      <th>Stop Loss</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for trade in trades %}
+    <tr>
+      <td>{{ trade.time }}</td>
+      <td>{{ trade.direction }}</td>
+      <td>{{ trade.entry }}</td>
+      <td>{{ trade.take_profit }}</td>
+      <td>{{ trade.stop_loss }}</td>
+      <td>{{ trade.notes }}</td>
+      {% if trade.image %}
+      <td>{{ trade.image.url }} </td>
+      <td><img src="{{ trade.image.url }}" alt="no img" width="400" height="200"></td>
+      {% else %}
+      <td>No image</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h2>Add a New Trade</h2>
+<form method="post"  enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <!-- <label for="direction">Direction:</label>
+  <label>
+    <input type="radio" name="length" value="long" checked> Long
+  </label>
+  <label>
+    <input type="radio" name="length" value="short"> Short
+  </label>
+
+  <br>
+  <label for="entry">Entry:</label>
+  <input type="number" id="entry" name="entry" required>
+  <br>
+  <label for="take_profit">Take Profit:</label>
+  <input type="number" id="take_profit" name="take_profit">
+  <br>
+  <label for="stop_loss">Stop Loss:</label>
+  <input type="number" id="stop_loss" name="stop_loss">
+  <br>
+  <label for="notes">Notes:</label>
+  <textarea id="notes" name="notes"></textarea>
+  <br>
+  <br>
+  <label for="entry_time">Entry Time:</label>
+  {{ form.entry_time }}
+  <br>
+  <label for="exit_time">Exit Time:</label>
+  {{ form.exit_time }}
+  <br>
+  <label for="image">Image:</label>
+  <input type="file" id="image" name="image">
+
+  <br>
+  <input type="submit" value="Submit"> -->
+
+  {{ form.direction }}
+  <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
