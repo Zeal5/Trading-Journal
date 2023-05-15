@@ -1,0 +1,20 @@
+body {
+    padding: 0%;
+    margin: 0%;
+    color: aliceblue;
+    background-color: black;
+
+}
+p,h1,div{
+    margin: 0%;
+}
+/* Grid starts here each div is a column for grid */
+.full_page {
+    display: grid;
+    grid-template-columns: 3fr 1fr 21fr;
+    grid-template-rows: 100vh;
+}
+.ledger {
+    margin: 3%;
+}
+
