@@ -9,10 +9,10 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def index(request):
     trades = Trade.objects.order_by('entry_time')
-    paginator = Paginator(trades, 10)
+    paginator = Paginator(trades, 15)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    print(paginator.page(8).object_list)
+
     context = { 'trades' : page_obj,
                'page_obj': page_obj}
 
