@@ -25,6 +25,8 @@
 }
 
 .collapse-button {
+    text-align: center;
+    width: 65px;
     padding: 3px;
     margin: 0;
     cursor: pointer;
