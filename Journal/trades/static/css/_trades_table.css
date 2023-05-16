@@ -1,10 +1,17 @@
 .ledger {
-    padding: 60px;
+    padding-top: 3rem;
+}
+.table-container {
+
+    display: flex;
+    justify-content: center;
+
 }
 
 .styled-table {
-    margin:50px  30px;
+    /* margin:50px  30px; */
     border-collapse: collapse;
+    
 }
 .styled-table th {
     color: #f65e5e;
@@ -16,14 +23,16 @@ td,
 th {
     min-width:50px ;
     padding: 3px;
-    max-width: 100px;
+    max-width: 80%;
     overflow: hidden;
     border: 1px solid white;
     text-align: center;
     vertical-align: top;
     
 }
-
+.styled-table #comment {
+    max-width: 720px;
+}
 .styled-table tr {
     /* line-height: 10px; */
     white-space: nowrap;
