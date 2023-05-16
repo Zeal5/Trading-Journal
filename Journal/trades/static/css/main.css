@@ -14,7 +14,5 @@ p,h1,div{
     grid-template-columns: 3fr 1fr 21fr;
     grid-template-rows: 100vh;
 }
-.ledger {
-    margin: 3%;
-}
+
 
