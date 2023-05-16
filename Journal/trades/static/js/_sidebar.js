@@ -1,15 +1,6 @@
-
-
-// console.log('start')
-// const collapse = document.getElementsByClassName("collapse-button")
 const sidebar = document.getElementsByClassName("sidebar")[0];
 const full_page = document.getElementById("full_page");
 
-// collapse.addEventListener('click', function () {
-//     alert("clicked");
-//     sidebar.style.color = 'red'
-// }
-// )
 
 function myFunction() {
     console.log(sidebar);
