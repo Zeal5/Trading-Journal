@@ -1,2 +1,23 @@
 
+.styled-table {
+    margin:50px  30px;
+    border-collapse: collapse;
+}
 
+.styled-table tr,
+td,
+th {
+    min-width:50px ;
+    padding: 3px;
+    max-width: 100px;
+    overflow: hidden;
+    border: 1px solid white;
+    text-align: center;
+    vertical-align: top;
+
+}
+.styled-table tr {
+    /* line-height: 10px; */
+    white-space: nowrap;
+}
+    

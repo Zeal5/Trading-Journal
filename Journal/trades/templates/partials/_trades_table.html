@@ -1,7 +1,6 @@
 {% load static %}
 
 <link type="text/css" rel="stylesheet" href="{% static 'css/_trades_table.css' %}">
-<script type="text/javascript" src="{% static 'js/_trades_table.js' %}"> </script>
 
 
 <!-- Main Trading entries -->
@@ -15,7 +14,7 @@
             <th>
                 Side
             </th>
-
+            
             <th>
                 Entry Price
             </th>
@@ -25,6 +24,13 @@
             <th>
                 Take Profit
             </th>
+            <th>
+                PnL
+            </th>
+            <th>
+                R:R
+            </th>
+
             <th>
                 Tags
             </th>
@@ -36,9 +42,163 @@
             </th>
         </tr>
     </thead>
-
+    
     <tbody class="entries-table-body">
+        <tr class="table-rows" onclick="toggle_comments(this)">
+            <td>
+                BTCUSDT
+            </td>
+            
+            <td>
+                LONG
+            </td>
+            
+            <td>
+                29000.25
+            </td>
+            
+            <td>
+                27000
+            </td>
+            
+            <td>
+                31000
+            </td>
+            <td>
+               +2.5%
+            </td>
+            <td>
+                3:1
+            </td>
+            <td>
+                Swing somethign shdifhwe 
+            </td>
+            <td>
+                Image
+            </td>
+            <td id="comment">
+                Comments something here
+                Loridem nesciunt veniam modi consectetur magnam est, dolor, maiores commodi.
+            </td>
+        </tr>
 
+       <tr class="table-rows" onclick="toggle_comments(this)">
+            <td>
+                BTCUSDT
+            </td>
+            
+            <td>
+                LONG
+            </td>
+            
+            <td>
+                29000.25
+            </td>
+            
+            <td>
+                27000
+            </td>
+            
+            <td>
+                31000
+            </td>
+            <td>
+               +2.5%
+            </td>
+            <td>
+                3:1
+            </td>
+            <td>
+                Swing somethign shdifhwe 
+            </td>
+            <td>
+                Image
+            </td>
+            <td id="comment">
+                Comments something here
+                Loreum, impedit eveniet obcaecati id nam expedim modi consectetur magnam est, dolor, maiores commodi.
+            </td>
+        </tr>
 
+               <tr class="table-rows" onclick="toggle_comments(this)">
+            <td>
+                BTCUSDT
+            </td>
+            
+            <td>
+                LONG
+            </td>
+            
+            <td>
+                29000.25
+            </td>
+            
+            <td>
+                27000
+            </td>
+            
+            <td>
+                31000
+            </td>
+            <td>
+               +2.5%
+            </td>
+            <td>
+                3:1
+            </td>
+            <td>
+                Swing
+            </td>
+            <td>
+                Image
+            </td>
+            <td id="comment">
+                Comments 
+               
+            </td>
+        </tr>
+
+               <tr class="table-rows" onclick="toggle_comments(this)">
+            <td>
+                BTCUSDT
+            </td>
+            
+            <td>
+                LONG
+            </td>
+            
+            <td>
+                29000.25
+            </td>
+            
+            <td>
+                27000
+            </td>
+            
+            <td>
+                31000
+            </td>
+            <td>
+               +2.5%
+            </td>
+            <td>
+                3:1
+            </td>
+            <td>
+                Swing somethign shdifhwe 
+            </td>
+            <td>
+                Image
+            </td>
+            <td id="comment">
+                Comments something here
+                Lorem ipsum dem nesciunt dolor corporur magnam est, dolor, maiores commodi.
+            </td>
+        </tr>
+  
+       
+        
+        
     </tbody>
 </table>
+<script type="text/javascript" src="{% static 'js/_trades_table.js' %}"> </script>
