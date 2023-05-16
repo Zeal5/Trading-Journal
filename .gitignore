@@ -2,7 +2,7 @@ db.sqlite3
 venv/
 zzzz.py
 Journal/settings.py
-
+migrations
 
 *.log
 *.pot
