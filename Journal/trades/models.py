@@ -23,6 +23,7 @@ class Trades(models.Model):
     rr = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     tags = models.CharField(null=True, blank=True, max_length=20)
     image = models.ImageField(null=True, blank=True)
+    comments = models.CharField(null=True, blank=True, max_length=1000)
 
     def __str__(self) -> str:
         return self.ticker

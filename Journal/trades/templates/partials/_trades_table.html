@@ -5,7 +5,112 @@
 
 <!-- Main Trading entries -->
 <div class="table-container">
-    <table class="styled-table">
+        <table class="styled-table">
+        <thead class="entries-table-head">
+            <tr>
+                <th>
+                    Ticker
+                </th>
+                <th>
+                    Side
+                </th>
+
+                <th>
+                    Entry Price
+                </th>
+                <th>
+                    Stop Loss
+                </th>
+                <th>
+                    Take Profit
+                </th>
+                <th>
+                    Exit Price
+                </th>
+                <th>
+                    PnL
+                </th>
+                <th>
+                    R:R
+                </th>
+
+                <th>
+                    Tags
+                </th>
+                <th>
+                    Image
+                </th>
+                <th>
+                    Comments
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="entries-table-body">
+        {% for trade in trades %}
+
+            <tr class="table-rows" onclick="toggle_comments(this)">
+                <td>
+                    {{ trade.ticker}}
+                </td>
+
+                <td>
+                    {{ trade.side }}
+                </td>
+
+                <td>
+                    {{ trade.entry }}
+                </td>
+
+                <td>
+                    {{ trade.stop_loss }}
+                </td>
+
+                <td>
+                    {{ trade.take_profit }}
+                </td>
+                <td>
+                    {{ trade.trade_exit }}
+                </td>
+                <td>
+                    {{ trade.pnl }}
+                </td>
+                <td>
+                    {{ trade.rr }}
+                </td>
+                <td>
+                    {{ trade.tags }}
+                </td>
+                <td>
+                    <img alt="None" src="{{ trade.image }}">
+                </td>
+                <td id="comment">
+                    {{ trade.comments }}
+                </td>
+            </tr>
+            {% endfor %}
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+<script type="text/javascript" src="{% static 'js/_trades_table.js' %}"> </script>
+
+
+
+
+<!-- 
+        <table class="styled-table">
         <thead class="entries-table-head">
             <tr>
                 <th>
@@ -289,6 +394,4 @@
 
         </tbody>
     </table>
-</div>
-
-<script type="text/javascript" src="{% static 'js/_trades_table.js' %}"> </script>
+ -->
