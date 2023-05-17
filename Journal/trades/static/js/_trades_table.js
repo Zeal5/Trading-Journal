@@ -1,11 +1,14 @@
 
 function toggle_comments(row) {
+    const notSelected = row.querySelector("#comment");
+    const selected = row.querySelector("#highlighted-comment");
 
-    if (row.style.whiteSpace === "normal") {
-        row.style.whiteSpace = "nowrap"
+    if (notSelected) {
+        notSelected.id = "highlighted-comment"
     }
-    else { 
-        row.style.whiteSpace = "normal" 
-}
+    else if (selected) {
+        selected.id = "comment";
+    }
+
 
 }
