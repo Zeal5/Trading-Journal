@@ -10,8 +10,13 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def home_page(request,*args, **kwargs):
-    all_trades = Trades.objects.all()
-    context = {
-        "trades" : all_trades }
-    return render(request, 'base.html',context=context)
+    if request.method == 'GET':
+        all_trades = Trades.objects.all()
+        context = {
+            "trades" : all_trades }
+        return render(request, 'base.html',context=context)
+    
+    # elif request.method == 'POST' :
+
+
 

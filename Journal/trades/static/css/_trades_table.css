@@ -34,24 +34,26 @@ th {
     vertical-align: top;
 
 }
+
 .styled-table #comment {
     max-width: 500px;
+    text-align: left;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 
-    
 }
+
 .styled-table #highlighted-comment {
     /* white-space: nowrap; */
-    text-align: left;
     max-width: 500px;
+    text-align: left;
     word-wrap: break-word;
-    overflow-y:auto ;
+    overflow-y: auto;
 }
 
 .styled-table tr {
-     max-height: 20px;
+    max-height: 20px;
     /* white-space: nowrap; */
     /* text-overflow: ellipsis; */
 }
@@ -63,3 +65,12 @@ th {
 .entries-table-body tr:nth-child(even) {
     background-color: #000000;
 }
+
+
+
+/* UPLOAD TRADES */
+
+/* #uploadtrades-container {
+    display: flex;
+    justify-content: center;
+} */
