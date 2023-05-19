@@ -5,7 +5,7 @@
 
 <!-- Main Trading entries -->
 <div class="table-container">
-        <table class="styled-table">
+    <table class="styled-table">
         <thead class="entries-table-head">
             <tr>
                 <th>
@@ -47,7 +47,7 @@
         </thead>
 
         <tbody class="entries-table-body">
-        {% for trade in trades %}
+            {% for trade in trades %}
 
             <tr class="table-rows" onclick="toggle_comments(this)">
                 <td>
@@ -91,27 +91,37 @@
             {% endfor %}
 
 
-            
+            <form method="post" action="{% url 'trades' %}" id="tradeForm">
+                {% csrf_token %}
+                <tr class="table-rows">
+                    <td><input type="text" name="s" placeholder="TICKER"></td>
+                    <td><input type="text" name="f" placeholder="SIDE"></td>
+                    <td><input type="text" name="d" placeholder="ENTRY PRICE"></td>
+                    <td><input type="text" name="p" placeholder="STOP LOSS"></td>
+                    <td><input type="text" name="v" placeholder="TAKE PROFIT"></td>
+                    <td><input type="text" name="x" placeholder="EXIT PRICE"></td>
+                    <td><input type="text" name="c" placeholder="PNL"></td>
+                    <td><input type="text" name="s" placeholder="RR"></td>
+                    <td><input type="text" name="a" placeholder="TAGS"></td>
+                    <td><input type="text" name="m" placeholder="IMAGE"></td>
+                    <td id="submit_trade"><input type="text" name="" placeholder="COMMENT">
+                        <input type="submit" value="Submit">
+                        <!-- <span id="submit_button_span">
+                            <button value="submit" type="submit">submit</button>
+                        </span> -->
+                    </td>
+                </tr>
+            </form>
+
+
+
         </tbody>
     </table>
 </div>
+
 <div id="uploadtrades-container">
-    
-    <form method="post" id="tradeForm">
-        
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-        <input type="text" name="" placeholder="">
-    </form>
-    
+
+
 </div>
 
 
@@ -125,6 +135,3 @@
 
 
 <script type="text/javascript" src="{% static 'js/_trades_table.js' %}"> </script>
-
-
-

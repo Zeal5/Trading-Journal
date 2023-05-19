@@ -12,29 +12,29 @@ function toggle_comments(row) {
 
 
 }
-document.getElementById("tradeForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent default form submission
+// document.getElementById("tradeForm").addEventListener("submit", function(event) {
+//   event.preventDefault(); // Prevent default form submission
 
-  // Get trade data from input fields
-  var entry = document.querySelector('input[name="entry"]').value;
-  var exit = document.querySelector('input[name="exit"]').value;
-  var dateTime = document.querySelector('input[name="date_time"]').value;
+//   // Get trade data from input fields
+//   var entry = document.querySelector('input[name="entry"]').value;
+//   var exit = document.querySelector('input[name="exit"]').value;
+//   var dateTime = document.querySelector('input[name="date_time"]').value;
 
-  // Create trade object
-  var trade = {
-    entry: entry,
-    exit: exit,
-    date_time: dateTime
-  };
+//   // Create trade object
+//   var trade = {
+//     entry: entry,
+//     exit: exit,
+//     date_time: dateTime
+//   };
 
-  // Send trade data via AJAX
-  axios.post("/home_page/", trade)
-    .then(function(response) {
-      // Handle success response
-      console.log("Trade uploaded successfully");
-    })
-    .catch(function(error) {
-      // Handle error response
-      console.error("Error uploading trade:", error);
-    });
-});
+//   // Send trade data via AJAX
+//   axios.post("/home_page/", trade)
+//     .then(function(response) {
+//       // Handle success response
+//       console.log("Trade uploaded successfully");
+//     })
+//     .catch(function(error) {
+//       // Handle error response
+//       console.error("Error uploading trade:", error);
+//     });
+// });
