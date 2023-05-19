@@ -94,17 +94,17 @@
             <form method="post" action="{% url 'trades' %}" id="tradeForm">
                 {% csrf_token %}
                 <tr class="table-rows">
-                    <td><input type="text" name="s" placeholder="TICKER"></td>
-                    <td><input type="text" name="f" placeholder="SIDE"></td>
-                    <td><input type="text" name="d" placeholder="ENTRY PRICE"></td>
-                    <td><input type="text" name="p" placeholder="STOP LOSS"></td>
-                    <td><input type="text" name="v" placeholder="TAKE PROFIT"></td>
-                    <td><input type="text" name="x" placeholder="EXIT PRICE"></td>
-                    <td><input type="text" name="c" placeholder="PNL"></td>
-                    <td><input type="text" name="s" placeholder="RR"></td>
-                    <td><input type="text" name="a" placeholder="TAGS"></td>
-                    <td><input type="text" name="m" placeholder="IMAGE"></td>
-                    <td id="submit_trade"><input type="text" name="" placeholder="COMMENT">
+                    <td><input type="text" name="ticker" placeholder="TICKER"></td>
+                    <td><input type="text" name="side" placeholder="SIDE"></td>
+                    <td><input type="text" name="entry_price" placeholder="ENTRY PRICE"></td>
+                    <td><input type="text" name="stop_loss" placeholder="STOP LOSS"></td>
+                    <td><input type="text" name="take_profit" placeholder="TAKE PROFIT"></td>
+                    <td><input type="text" name="exit_price" placeholder="EXIT PRICE"></td>
+                    <td><input type="text" name="pnl" placeholder="PNL"></td>
+                    <td><input type="text" name="rr" placeholder="RR"></td>
+                    <td><input type="text" name="tags" placeholder="TAGS"></td>
+                    <td><input type="text" name="image" placeholder="IMAGE"></td>
+                    <td id="submit_trade"><input type="text" name="comment" placeholder="COMMENT">
                         <input type="submit" value="Submit">
                         <!-- <span id="submit_button_span">
                             <button value="submit" type="submit">submit</button>
