@@ -91,6 +91,19 @@ document.getElementById("tradeForm").addEventListener("submit", function (event)
     const last_child = tbody.lastElementChild;
     tbody.insertBefore(newRow, last_child)
 
+    const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+
+    some_data = {
+        first : "1st",
+        Second: "2nd" }
+
+    fetch("/", {
+        method: 'POST',
+        headers: {
+             'Content-Type': 'application/json' ,
+            'X-CSRFToken': csrfToken,},
+        body: JSON.stringify(some_data) } )
+
 
 
 });

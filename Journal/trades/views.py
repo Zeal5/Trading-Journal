@@ -15,6 +15,7 @@ def home_page(request,*args, **kwargs):
         context = {
             "trades" : all_trades }
         print('something')
+
         return render(request, 'base.html',context=context)
 
 
