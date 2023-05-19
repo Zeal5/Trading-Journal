@@ -85,3 +85,21 @@ th {
     color: white;
     background-color: black;
 }
+
+/* error popup  */
+
+#error_popup {
+    position: fixed;
+    border-radius: 8px;
+    height: 25px;
+    box-shadow: 0 0 10px rgb(255, 0, 0);
+    width: auto;
+    background-color: white;
+    top: 49px;
+    right: 3px;
+    color: black;
+    padding: 2px;
+    display: none;
+    align-items: center;
+
+}
