@@ -5,7 +5,7 @@
 
 <!-- Erro pop up -->
 <div id="error_popup">
-    
+
 </div>
 
 <!-- Main Trading entries -->
@@ -100,7 +100,12 @@
                 {% csrf_token %}
                 <tr class="table-rows">
                     <td><input type="text" name="ticker" placeholder="TICKER"></td>
-                    <td><input type="text" name="side" placeholder="SIDE"></td>
+                    <td>
+                        <select>
+                            <option value="long">LONG</option>
+                            <option value="short">SHORT</option>
+                        </select>
+                    </td>
                     <td><input type="text" name="entry_price" placeholder="ENTRY PRICE"></td>
                     <td><input type="text" name="stop_loss" placeholder="STOP LOSS"></td>
                     <td><input type="text" name="take_profit" placeholder="TAKE PROFIT"></td>

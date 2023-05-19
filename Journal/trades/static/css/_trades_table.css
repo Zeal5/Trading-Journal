@@ -90,8 +90,7 @@ th {
 
 #error_popup {
     position: fixed;
-    border-radius: 8px;
-    height: 25px;
+    border-radius: 6px;
     box-shadow: 0 0 10px rgb(255, 0, 0);
     width: auto;
     background-color: white;

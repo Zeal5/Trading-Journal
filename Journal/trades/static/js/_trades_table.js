@@ -19,7 +19,7 @@ document.getElementById("tradeForm").addEventListener("submit", function (event)
     var entry = tbody.querySelector('input[name="entry_price"]').value;
     var exit = tbody.querySelector('input[name="exit_price"]').value;
     var ticker = tbody.querySelector('input[name="ticker"]').value;
-    var side = tbody.querySelector('input[name="side"]').value;
+    var side = tbody.querySelector('select').value;
     var stop_loss = tbody.querySelector('input[name="stop_loss"]').value;
     var take_profit = tbody.querySelector('input[name="take_profit"]').value;
     var pnl = tbody.querySelector('input[name="pnl"]').value;
@@ -43,7 +43,7 @@ document.getElementById("tradeForm").addEventListener("submit", function (event)
     }
     // error display
     const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
-
+    // console.log(`csrf = ${csrfToken}`)
     fetch("/upload/", {
         method: 'POST',
         headers: {
@@ -121,7 +121,7 @@ document.getElementById("tradeForm").addEventListener("submit", function (event)
             else {
                 return response.text()
                     .then(errorMsg => {
-                        throw new Error(errorMsg);
+                        throw errorMsg;
                     });
             }
         })
@@ -131,8 +131,21 @@ document.getElementById("tradeForm").addEventListener("submit", function (event)
 
 
     function showError(message) {
+        let err = JSON.parse(message)
+        let error_message = ""
+        for (var key in err) {
+            if (err.hasOwnProperty(key)) {
+                var value = err[key];
+                error_message += ( key.toUpperCase() + " " + value + "<br>");
+            }
+        }
+
+
+
+
         const errorPopup = document.getElementById('error_popup');
-        errorPopup.textContent = message;
+        console.log(error_message)
+        errorPopup.innerHTML = error_message;
         errorPopup.style.backgroundColor = "red";
         errorPopup.style.color = "white";
         errorPopup.style.display = 'flex';
