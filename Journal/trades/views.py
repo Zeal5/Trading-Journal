@@ -47,16 +47,13 @@ def upload_trades(request, *args, **kwargs):
 
     if serializer.is_valid():
         serializer.save()
-        print('form was valid')
-        return Response({'message': 'Upload successful'})\
-
+        print("form was valid")
+        return Response({"message": "Upload successful"})
     else:
         errors = serializer.errors
         error_message = {}
-        for k,v in errors.items():
+        for k, v in errors.items():
             error_message[k] = f"{v[0]}"
         print(error_message)
-        
-        return Response(error_message,status=400)
 
-
+        return Response(error_message, status=400)

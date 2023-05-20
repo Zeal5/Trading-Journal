@@ -136,7 +136,7 @@ document.getElementById("tradeForm").addEventListener("submit", function (event)
         for (var key in err) {
             if (err.hasOwnProperty(key)) {
                 var value = err[key];
-                error_message += ( key.toUpperCase() + " " + value + "<br>");
+                error_message += (key.toUpperCase() + " " + value + "<br>");
             }
         }
 
@@ -154,17 +154,6 @@ document.getElementById("tradeForm").addEventListener("submit", function (event)
             errorPopup.style.display = 'none';
         }, 3000);
     }
-
-
-
-
-
-
-
-
-
-
-
 
 });
 

@@ -33,11 +33,12 @@
     color: #444;
     border: none;
     outline: none;
-	transform:rotate(-90deg);
+    transform: rotate(-90deg);
     display: inline-flex;
     border: 1px solid black;
 
 }
+
 .collapse-button:hover {
     color: white;
     border: 1px solid white;

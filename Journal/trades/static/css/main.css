@@ -5,9 +5,13 @@ body {
     background-color: black;
 
 }
-p,h1,div{
+
+p,
+h1,
+div {
     margin: 0%;
 }
+
 /* Grid starts here each div is a column for grid */
 .full_page {
     /* position: fixed; */
@@ -15,5 +19,3 @@ p,h1,div{
     grid-template-columns: 1fr 1fr 21fr;
     grid-template-rows: 100vh;
 }
-
-
