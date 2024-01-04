@@ -13,7 +13,9 @@ import json
 
 
 def home_page(request, *args, **kwargs):
-    return HttpResponse("<h1>Hellow</h1>")
+    context = { "spot" : True}
+    print(request.method)
+    return render(request, "base.html", context=context)
 
 
 # elif request.method == 'POST' :

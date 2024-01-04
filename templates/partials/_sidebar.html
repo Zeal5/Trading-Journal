@@ -1,11 +1,11 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/_sidebar.css' %}">
 
-
-
-<p>sidebar</p>
-<p>sidebar</p>
-
-
+<p> 
+<a href="{% url 'spot_bag:home_page' %}">Spot</a>
+</p>
+<p> 
+<a href="{% url 'trades:home_page' %}">Futures</a>
+</p>
 
 <script type="text/javascript" src="{% static 'js/_sidebar.js' %}"></script>

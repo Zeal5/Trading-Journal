@@ -28,11 +28,14 @@
             <button class="collapse-button" onclick="myFunction()">Collapse</button>
         </div>
 
-
+				{% if ledger %}
         <div class="ledger">
             {% include 'partials/_trades_table.html' with trades=trades %}
-
         </div>
+				{% elif spot %}
+				<h1> spot view </h1>
+				{% endif %}
+
 
 
 

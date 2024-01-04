@@ -15,7 +15,7 @@ from .serializer import TradeSerializer
 def home_page(request, *args, **kwargs):
     if request.method == "GET":
         all_trades = Trades.objects.all()
-        context = {"trades": all_trades}
+        context = {"trades": all_trades, "ledger" : True}
         print(request.method)
         return render(request, "base.html", context=context)
 

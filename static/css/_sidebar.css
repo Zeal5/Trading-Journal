@@ -39,6 +39,13 @@
 
 }
 
+.sidebar a {
+   color: white; /* This makes the text color white */
+   text-decoration: none; /* This removes the underline */
+   background-color: transparent; /* This removes the highlight */
+}
+
+}
 .collapse-button:hover {
     color: white;
     border: 1px solid white;

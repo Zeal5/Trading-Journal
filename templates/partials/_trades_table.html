@@ -96,7 +96,7 @@
             {% endfor %}
 
 
-            <form method="post" action="{% url 'trades' %}" id="tradeForm">
+            <form method="post" action="{% url 'trades:trades' %}" id="tradeForm">
                 {% csrf_token %}
                 <tr class="table-rows">
                     <td><input type="text" name="ticker" placeholder="TICKER"></td>
