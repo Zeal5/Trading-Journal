@@ -13,7 +13,7 @@ import json
 
 
 def home_page(request, *args, **kwargs):
-    context = { "spot" : True}
+    context = {"spot" : True}
     print(request.method)
     return render(request, "base.html", context=context)
 

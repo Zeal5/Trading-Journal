@@ -28,16 +28,14 @@
             <button class="collapse-button" onclick="myFunction()">Collapse</button>
         </div>
 
+				<!-- if ledger (futures) is passed to context render the futures table elseif spot is passed render spots tables -->
 				{% if ledger %}
         <div class="ledger">
-            {% include 'partials/_trades_table.html' with trades=trades %}
+					{% include 'partials/futures_trades_table.html' with trades=trades %}
         </div>
 				{% elif spot %}
-				<h1> spot view </h1>
+					{% include 'partials/spot_table.html' %}
 				{% endif %}
-
-
-
 
         {% block content %}
 

@@ -1,0 +1,144 @@
+{% load static %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/futures_trades_table.css' %}">
+
+<!-- Erro pop up -->
+<div id="error_popup">
+</div>
+
+<!-- Main Trading entries -->
+<div class="table-container">
+    <table class="styled-table">
+        <thead class="entries-table-head">
+            <tr>
+                <th>
+                    Ticker
+                </th>
+                <th>
+                    Side
+                </th>
+
+                <th>
+                    Entry Price
+                </th>
+                <th>
+                    Stop Loss
+                </th>
+                <th>
+                    Take Profit
+                </th>
+                <th>
+                    Exit Price
+                </th>
+                <th>
+                    PnL
+                </th>
+                <th>
+                    R:R
+                </th>
+
+                <th>
+                    Tags
+                </th>
+                <th>
+                    Image
+                </th>
+                <th>
+                    Comments
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="entries-table-body">
+            {% for trade in trades %}
+
+            <tr class="table-rows" onclick="toggle_comments(this)">
+                <td>
+                    {{ trade.ticker}}
+                </td>
+
+                <td>
+                    {{ trade.side }}
+                </td>
+
+                <td>
+                    {{ trade.entry }}
+                </td>
+
+                <td>
+                    {{ trade.stop_loss }}
+                </td>
+
+                <td>
+                    {{ trade.take_profit }}
+                </td>
+                <td>
+                    {{ trade.trade_exit }}
+                </td>
+                <td>
+                    {{ trade.pnl }}
+                </td>
+                <td>
+                    {{ trade.rr }}
+                </td>
+                <td>
+                    {{ trade.tags }}
+                </td>
+                <td>
+                    <img alt="None" src="{{ trade.image }}">
+                </td>
+                <td id="comment">
+                    {{ trade.comments }}
+                </td>
+            </tr>
+            {% endfor %}
+
+
+            <form method="post" action="{% url 'trades:trades' %}" id="tradeForm">
+                {% csrf_token %}
+                <tr class="table-rows">
+                    <td><input type="text" name="ticker" placeholder="TICKER"></td>
+                    <td>
+                        <select>
+                            <option value="long">LONG</option>
+                            <option value="short">SHORT</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="entry_price" placeholder="ENTRY PRICE"></td>
+                    <td><input type="text" name="stop_loss" placeholder="STOP LOSS"></td>
+                    <td><input type="text" name="take_profit" placeholder="TAKE PROFIT"></td>
+                    <td><input type="text" name="exit_price" placeholder="EXIT PRICE"></td>
+                    <td><input type="text" name="pnl" placeholder="PNL"></td>
+                    <td><input type="text" name="rr" placeholder="RR"></td>
+                    <td><input type="text" name="tags" placeholder="TAGS"></td>
+                    <td><input type="text" name="image" placeholder="IMAGE"></td>
+                    <td id="submit_trade"><input type="text" name="comment" placeholder="COMMENT">
+                        <input type="submit" value="Submit">
+                        <!-- <span id="submit_button_span">
+                            <button value="submit" type="submit">submit</button>
+                        </span> -->
+                    </td>
+                </tr>
+            </form>
+
+
+
+        </tbody>
+    </table>
+</div>
+
+<div id="uploadtrades-container">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="{% static 'js/futures_trades_table.js' %}"> </script>
