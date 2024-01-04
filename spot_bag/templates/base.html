@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+
+
+<body>
+    <!-- Header of the page -->
+    <header>
+        {% include 'partials/header.html' %}
+    </header>
+
+
+    <main class="full_page" id="full_page">
+        <div class="sidebar">
+            <!-- Side Bar for the page -->
+            {% include 'partials/_sidebar.html' %}
+        </div>
+        <div class="collapse-button-container">
+            <button class="collapse-button" onclick="myFunction()">Collapse</button>
+        </div>
+
+
+        <div class="ledger">
+            {% include 'partials/_trades_table.html' with trades=trades %}
+
+        </div>
+
+
+
+        {% block content %}
+
+        {% endblock content %}
+    </main>
+</body>
+
+</html>
